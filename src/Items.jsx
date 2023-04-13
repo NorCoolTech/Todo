@@ -1,7 +1,7 @@
 import React from 'react'
 import SingleItem from './SingleItem';
 
-const Items = ({ items, removeItem, editItem }) => {
+const Items = ({ items, removeItem, editItem, editName }) => {
   return (
     <div className="items">
       {items.map((item) => {
@@ -11,6 +11,7 @@ const Items = ({ items, removeItem, editItem }) => {
             item={item}
             removeItem={removeItem}
             editItem={editItem}
+            editName={editName}
           />
         );
       })}

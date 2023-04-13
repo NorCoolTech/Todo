@@ -58,11 +58,29 @@ const App = () => {
     setLocalStorage(newItems);
   }
 
+const editName = (itemId, newName) => {
+  const newItems = items.map((item) => {
+    if (item.id === itemId) {
+      const newItem = { ...item, name: newName };
+      return newItem;
+    }
+    return item;
+  });
+  setItems(newItems);
+  setLocalStorage(newItems);
+  toast.info("item renamed");
+};
+
   return (
     <section className="section-center">
       <ToastContainer position="top-center" autoClose={1500} />
       <Form addItem={addItem} />
-      <Items items={items} removeItem={removeItem} editItem={editItem} />
+      <Items
+        items={items}
+        removeItem={removeItem}
+        editItem={editItem}
+        editName={editName}
+      />
     </section>
   );
 };
