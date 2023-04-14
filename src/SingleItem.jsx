@@ -37,14 +37,16 @@ const SingleItem = ({ item, removeItem, editItem, editName }) => {
             type="text"
             value={newName}
             onChange={(e) => setNewName(e.target.value)}
-            placeholder="Enter a new name"
+            placeholder="Enter a new task"
           />
-          <button className="btn cancel-btn" onClick={handleCancelEdit}>
-            Cancel
-          </button>
-          <button className="btn save-btn" onClick={handleSaveEdit}>
-            Save
-          </button>
+          <div className="btn-edit">
+            <button className="btn cancel-btn" onClick={handleCancelEdit}>
+              Cancel
+            </button>
+            <button className="btn save-btn" onClick={handleSaveEdit}>
+              Save
+            </button>
+          </div>
         </div>
       ) : (
         <p
